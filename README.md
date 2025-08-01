@@ -1,39 +1,39 @@
-# Mini REST API with Express.js
+# Mini REST API
 
-## Description
-A simple REST API built using Node.js and Express.js that supports basic CRUD operations.
+This is a simple REST API built with Node.js and Express.js to manage a list of items in-memory.
 
-## Setup Instructions
+## Setup
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-2. Start the server:
-   ```bash
-   node server.js
-   ```
-
-3. The API runs on `http://localhost:3000`.
+```bash
+npm install
+npm start
+```
 
 ## API Endpoints
 
-### Root
-- `GET /`  
-  **Response**: `"Hello, World!"`
+### GET /items
+- Returns a list of items
 
-### Items
+**Response:**
+```json
+[
+  {
+    "id": 1,
+    "name": "Item One",
+    "description": "First item"
+  }
+]
+```
 
-#### Get All Items
-- `GET /items`
+### GET /items/:id
+- Returns an item by ID
+- 404 if not found
 
-#### Get Single Item
-- `GET /items/:id`
+### POST /items
+- Adds a new item
+- Requires: `name` (string), `description` (string)
 
-#### Create Item
-- `POST /items`
-- **Body**:
+**Body Example:**
 ```json
 {
   "name": "New Item",
@@ -41,20 +41,18 @@ A simple REST API built using Node.js and Express.js that supports basic CRUD op
 }
 ```
 
-#### Update Item
-- `PUT /items/:id`
-- **Body**:
-```json
-{
-  "name": "Updated Item",
-  "description": "Updated description"
-}
-```
+### PUT /items/:id
+- Updates an existing item
 
-#### Delete Item
-- `DELETE /items/:id`
+### DELETE /items/:id
+- Deletes an item
 
 ## Error Handling
-- 400: Invalid input
-- 404: Not Found
-- 500: Server Error
+
+- Invalid input: 400
+- Not found: 404
+- Server error: 500
+
+## Testing
+
+Use the included Postman collection: `mini-rest-api.postman_collection.json`

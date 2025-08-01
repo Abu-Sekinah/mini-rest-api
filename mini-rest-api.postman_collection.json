@@ -1,0 +1,23 @@
+{
+  "info": {
+    "name": "Mini REST API",
+    "_postman_id": "abc123",
+    "description": "Postman collection for testing Mini REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET /items",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/items",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["items"]
+        }
+      }
+    }
+  ]
+}
