@@ -1,6 +1,6 @@
 # Mini REST API
 
-This is a simple REST API built with Node.js and Express.js to manage a list of items in-memory.
+A simple RESTful API built with Node.js and Express.
 
 ## Setup
 
@@ -11,48 +11,50 @@ npm start
 
 ## API Endpoints
 
-### GET /items
-- Returns a list of items
+### GET /
 
-**Response:**
-```json
-[
-  {
-    "id": 1,
-    "name": "Item One",
-    "description": "First item"
-  }
-]
-```
+Returns Hello World message.
+
+### GET /items
+
+Returns a list of all items.
 
 ### GET /items/:id
-- Returns an item by ID
-- 404 if not found
+
+Returns a single item by ID.
 
 ### POST /items
-- Adds a new item
-- Requires: `name` (string), `description` (string)
 
-**Body Example:**
+Creates a new item.
+
+**Body:**
 ```json
 {
-  "name": "New Item",
-  "description": "Description here"
+  "name": "Item name",
+  "description": "Item description"
 }
 ```
 
 ### PUT /items/:id
-- Updates an existing item
+
+Updates an existing item by ID.
+
+**Body:**
+```json
+{
+  "name": "Updated name",
+  "description": "Updated description"
+}
+```
 
 ### DELETE /items/:id
-- Deletes an item
+
+Deletes an item by ID.
 
 ## Error Handling
 
-- Invalid input: 400
-- Not found: 404
-- Server error: 500
+Returns appropriate 400, 404, and 500 error messages.
 
 ## Testing
 
-Use the included Postman collection: `mini-rest-api.postman_collection.json`
+Use the provided Postman collection: `mini-rest-api.postman_collection.json`

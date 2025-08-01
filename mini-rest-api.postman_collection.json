@@ -1,8 +1,8 @@
 {
   "info": {
     "name": "Mini REST API",
-    "_postman_id": "abc123",
-    "description": "Postman collection for testing Mini REST API",
+    "_postman_id": "12345678-1234-1234-1234-123456789abc",
+    "description": "Postman collection for mini REST API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -10,12 +10,71 @@
       "name": "GET /items",
       "request": {
         "method": "GET",
+        "header": [],
         "url": {
           "raw": "http://localhost:3000/items",
           "protocol": "http",
           "host": ["localhost"],
           "port": "3000",
           "path": ["items"]
+        }
+      }
+    },
+    {
+      "name": "GET /items/:id",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/items/1",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["items", "1"]
+        }
+      }
+    },
+    {
+      "name": "POST /items",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{ "name": "New Item", "description": "A new item" }"
+        },
+        "url": {
+          "raw": "http://localhost:3000/items",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["items"]
+        }
+      }
+    },
+    {
+      "name": "PUT /items/:id",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{ "name": "Updated Item", "description": "Updated description" }"
+        },
+        "url": {
+          "raw": "http://localhost:3000/items/1",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["items", "1"]
+        }
+      }
+    },
+    {
+      "name": "DELETE /items/:id",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:3000/items/1",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["items", "1"]
         }
       }
     }

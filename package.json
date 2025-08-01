@@ -1,7 +1,7 @@
 {
   "name": "mini-rest-api",
   "version": "1.0.0",
-  "description": "Simple REST API with Express",
+  "description": "A simple REST API using Node.js and Express",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
